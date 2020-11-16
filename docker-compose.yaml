@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  command-box-front:
+    build: ./docker/front
+    container_name: command-box-front
+    tty: true
+    volumes:
+    - ./../command-box-frontend/:/app
+    ports:
+      - "8080:8080"
+    command: >
+      ash -c "yarn install &&
+        yarn serve"
