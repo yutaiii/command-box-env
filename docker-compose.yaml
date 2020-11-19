@@ -22,3 +22,15 @@ services:
     - ./../command-box-backend:/go/src/github.com/yutaiii/command-box-backend
     working_dir: /go/src/github.com/yutaiii/command-box-backend/
     command: realize start --run
+
+  command-box-db:
+    image: mysql:5.7
+    container_name: command-box-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: command-box
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./db/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
