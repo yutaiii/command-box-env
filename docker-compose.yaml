@@ -12,3 +12,13 @@ services:
     command: >
       ash -c "yarn install &&
         yarn serve"
+
+  command-box-back:
+    build: ./docker/back
+    container_name: command-box-back
+    ports:
+      - "8000:8000"
+    volumes:
+    - ./../command-box-backend:/go/src/github.com/yutaiii/command-box-backend
+    working_dir: /go/src/github.com/yutaiii/command-box-backend/
+    command: realize start --run
