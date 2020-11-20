@@ -28,7 +28,7 @@ services:
     container_name: command-box-db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: command-box
+      MYSQL_DATABASE: command_box
       TZ: 'Asia/Tokyo'
     volumes:
       - ./db/data:/var/lib/mysql
