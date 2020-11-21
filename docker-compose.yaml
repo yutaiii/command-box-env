@@ -22,6 +22,8 @@ services:
     - ./../command-box-backend:/go/src/github.com/yutaiii/command-box-backend
     working_dir: /go/src/github.com/yutaiii/command-box-backend/
     command: realize start --run
+    links:
+      - command-box-db
 
   command-box-db:
     image: mysql:5.7
